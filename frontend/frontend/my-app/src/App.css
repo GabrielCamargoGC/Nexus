@@ -1,0 +1,147 @@
+/* App.css */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212; /* preto escuro */
+  color: #ffffff; /* vermelho vibrante */
+  min-height: 100vh;
+}
+
+h2, h3 {
+  color: #ff3b3f; /* vermelho */
+}
+
+.app-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #1c1c1c;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 25px #fa3434aa;
+  animation: fadeIn 0.7s ease forwards;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  user-select: none;
+}
+
+button {
+  background-color: #ff3b3f;
+  border: none;
+  color: #121212;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+  user-select: none;
+}
+
+button:hover:not(:disabled) {
+  background-color: #ff6b6e;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+select, input[type="number"] {
+  background-color: #121212;
+  color: #ffffff;
+  border: 2px solid #ff3b3f;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  margin-right: 10px;
+  user-select: none;
+}
+
+select:focus, input[type="number"]:focus {
+  outline: none;
+  border-color: #ff6b6e;
+}
+
+.error-message {
+  color: #ff4c4c;
+  font-weight: 700;
+  margin: 15px 0;
+  text-align: center;
+}
+
+.result-container {
+  margin-top: 20px;
+  background: #2a2a2a;
+  padding: 20px;
+  border-radius: 10px;
+  animation: fadeIn 0.7s ease forwards;
+  user-select: none;
+}
+
+h3 {
+  margin-top: 30px;
+  border-bottom: 2px solid #ff3b3f;
+  padding-bottom: 5px;
+  user-select: none;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  background: #222;
+  margin: 8px 0;
+  padding: 10px 15px;
+  border-radius: 8px;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+li:hover {
+  background-color: #ff3b3f22;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Lista de favoritos */
+ul.favorites-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-left: 0;
+  list-style: none;
+}
+
+ul.favorites-list li {
+  background-color: #ff3b3f22;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  user-select: none;
+  color: #ff3b3f;
+  font-weight: 600;
+  min-width: 100px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+ul.favorites-list li:hover {
+  background-color: #ff3b3f44;
+}

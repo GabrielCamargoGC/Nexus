@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Conversion {
+  id        Int      @id @default(autoincrement())
+  currency  String
+  amount    Float
+  brlValue  Float
+  usdValue  Float
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int
+}
+
+model Favorite {
+  id       Int    @id @default(autoincrement())
+  currency String
+  user     User   @relation(fields: [userId], references: [id])
+  userId   Int
+
+  @@unique([currency, userId]) // Cada usuário pode favoritar uma moeda uma vez
+}
+
+model User {
+  id         Int          @id @default(autoincrement())
+  username   String       @unique
+  password   String
+  favorites  Favorite[]
+  conversions Conversion[]
+}
